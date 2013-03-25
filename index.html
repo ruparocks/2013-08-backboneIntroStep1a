@@ -13,7 +13,7 @@
       });
 
       //by using the 'new' keyword here, we are creating an instance of the Tweet class.  Does it make sense to you that the lines above and the below lines could be compressed to one expression?  If not, pull a teacher over.  If you think you have it, scroll to the bottom for the answer (answer 1.).
-      var myNewTweet = new Tweet;
+      var myNewTweet = new Tweet();
 
       //Backbone gives us some pretty cool stuff.  One of the biggest things it bundles in is the ability to 'listen' for 'events'.  For example, if something in our model changes, we can 'listen' for that change and do something after the 'event' happens.  When we want to register a 'listener', we use the method '.on()'.  It takes two arguments.  The first is the event and the second is an anonymous function that does the thing you want to do when the 'event' happens.  Backbone gives you a couple events for free.  Most importantly, they give you 'change', which means that your model changed somehow, like it had an attribute added to the model, had one deleted, or had one changed. 
 
@@ -21,7 +21,7 @@
       myNewTweet.on('change', function(){
       	//we are just going to alert something when something is changed on the model.
       	alert('Something in the model changed after this listener was registered!!!');
-      })
+      });
 
       //ok, now, you have all the important bits to make the backbone event that is already registered fire.  How are we going to do that?  Well, we know that if we 'change' the myNewTweet object/model, it will fire the event.  So we just need to change that object/model somehow.  Backbone models act a little different than normal javascript objects.  One of the biggest things is that they have all sorts more methods that you can call on them.  The one we are going to want to use is called '.set', and you can read about it here:http://backbonejs.org/#Model-set
 
